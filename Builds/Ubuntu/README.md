@@ -35,6 +35,6 @@ export BOOST_ROOT=/home/dbliu/work/dac/Builds/Ubuntu/boost_1_63_0
 ```
 - 执行编译指令
 ```
-> scons --static -j2
+> scons --static --enable-mysql -j2
 ```
 - 编译成功后，dacd 程序在 build 目录下
