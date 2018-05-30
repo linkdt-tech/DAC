@@ -139,21 +139,11 @@ SetAccount::preflight (PreflightContext const& ctx)
 
         float fMax = atof(feeMax.c_str());
         float fMin = atof(feeMin.c_str());
-		if (fMax != 0f && fMin > fMax)
+		if (fMax != 0 && fMin > fMax)
 		{
 			JLOG(j.trace()) << "Malformed transaction: TransferFeeMin can not be greater than TransferFeeMax.";
 			return temBAD_TRANSFERFEE;
 		}
-        if((fMin == 0f && fMax != 0f) || (fMin != 0f && fMax == 0f))
-        {
-            auto const id = ctx.tx[sfAccount];
-            auto const sle = ctx.view.read(keylet::account(id));
-            if(!(tx.isFieldPresent(sfTransferRate)&& tx.getFieldU32(sfTransferRate) > QUALITY_ONE) && 
-                !sle.isFieldPresent(sfTransferRate))
-            {
-                return temBAD_NO_TRANSFER_RATE;
-            }
-        }
 	}
 	else if (tx.isFieldPresent(sfTransferFeeMin) || tx.isFieldPresent(sfTransferFeeMax))
 	{
@@ -226,6 +216,23 @@ SetAccount::preclaim(PreclaimContext const& ctx)
         }
     }
 
+	if (ctx.tx.isFieldPresent(sfTransferFeeMin) && ctx.tx.isFieldPresent(sfTransferFeeMax))
+	{
+		std::string feeMin = strCopy(ctx.tx.getFieldVL(sfTransferFeeMin));
+		std::string feeMax = strCopy(ctx.tx.getFieldVL(sfTransferFeeMax));
+
+		float fMax = atof(feeMax.c_str());
+		float fMin = atof(feeMin.c_str());
+
+		if ((fMin == 0 && fMax != 0) || (fMin != 0 && fMax == 0))
+		{
+			if (!(ctx.tx.isFieldPresent(sfTransferRate) && ctx.tx.getFieldU32(sfTransferRate) > QUALITY_ONE) &&
+				!sle->isFieldPresent(sfTransferRate))
+			{
+				return temBAD_NO_TRANSFER_RATE;
+			}
+		}
+	}
     return tesSUCCESS;
 }
 
