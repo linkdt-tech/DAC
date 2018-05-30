@@ -519,18 +519,18 @@ SetAccount::doApply ()
 	{		
 		// if you want to unset transferfee-min just set it to 0
 		// if you want to unset transferfee-max just set it to 0
-        std::string feeMin = strCopy(tx.getFieldVL(sfTransferFeeMin));
-		std::string feeMax = strCopy(tx.getFieldVL(sfTransferFeeMax));
+        std::string feeMin = strCopy(ctx_.tx.getFieldVL(sfTransferFeeMin));
+		std::string feeMax = strCopy(ctx_.tx.getFieldVL(sfTransferFeeMax));
 
         float fMax = atof(feeMax.c_str());
         float fMin = atof(feeMin.c_str());
-        if(fMin == 0f){
+        if(fMin == 0){
             sle->makeFieldAbsent(sfTransferFeeMin);
         }else{
             sle->setFieldVL(sfTransferFeeMin, ctx_.tx.getFieldVL(sfTransferFeeMin));
         }
         
-		if(fMax == 0f){
+		if(fMax == 0){
             sle->makeFieldAbsent(sfTransferFeeMax);
         }else{
             sle->setFieldVL(sfTransferFeeMax, ctx_.tx.getFieldVL(sfTransferFeeMax));
