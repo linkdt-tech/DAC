@@ -137,11 +137,23 @@ SetAccount::preflight (PreflightContext const& ctx)
 		std::string feeMin = strCopy(tx.getFieldVL(sfTransferFeeMin));
 		std::string feeMax = strCopy(tx.getFieldVL(sfTransferFeeMax));
 
-		if (atof(feeMin.c_str()) > atof(feeMax.c_str()))
+        float fMax = atof(feeMax.c_str());
+        float fMin = atof(feeMin.c_str());
+		if (fMax != 0f && fMin > fMax)
 		{
 			JLOG(j.trace()) << "Malformed transaction: TransferFeeMin can not be greater than TransferFeeMax.";
 			return temBAD_TRANSFERFEE;
-		}		
+		}
+        if((fMin == 0f && fMax != 0f) || (fMin != 0f && fMax == 0f))
+        {
+            auto const id = ctx.tx[sfAccount];
+            auto const sle = ctx.view.read(keylet::account(id));
+            if(!(tx.isFieldPresent(sfTransferRate)&& tx.getFieldU32(sfTransferRate) > QUALITY_ONE) && 
+                !sle.isFieldPresent(sfTransferRate))
+            {
+                return temBAD_NO_TRANSFER_RATE;
+            }
+        }
 	}
 	else if (tx.isFieldPresent(sfTransferFeeMin) || tx.isFieldPresent(sfTransferFeeMax))
 	{
@@ -499,10 +511,23 @@ SetAccount::doApply ()
 	if (ctx_.tx.isFieldPresent(sfTransferFeeMin) && ctx_.tx.isFieldPresent(sfTransferFeeMax))
 	{		
 		// if you want to unset transferfee-min just set it to 0
-		// if you want to unset transferfee-max just set it to a large value
-		sle->setFieldVL(sfTransferFeeMin, ctx_.tx.getFieldVL(sfTransferFeeMin));
-		sle->setFieldVL(sfTransferFeeMax, ctx_.tx.getFieldVL(sfTransferFeeMax));
-		JLOG(j_.trace()) << "set transferfee min and transferfee max.";
+		// if you want to unset transferfee-max just set it to 0
+        std::string feeMin = strCopy(tx.getFieldVL(sfTransferFeeMin));
+		std::string feeMax = strCopy(tx.getFieldVL(sfTransferFeeMax));
+
+        float fMax = atof(feeMax.c_str());
+        float fMin = atof(feeMin.c_str());
+        if(fMin == 0f){
+            sle->makeFieldAbsent(sfTransferFeeMin);
+        }else{
+            sle->setFieldVL(sfTransferFeeMin, ctx_.tx.getFieldVL(sfTransferFeeMin));
+        }
+        
+		if(fMax == 0f){
+            sle->makeFieldAbsent(sfTransferFeeMax);
+        }else{
+            sle->setFieldVL(sfTransferFeeMax, ctx_.tx.getFieldVL(sfTransferFeeMax));
+        }
 	}
 
     //
