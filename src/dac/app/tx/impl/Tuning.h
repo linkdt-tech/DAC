@@ -17,8 +17,8 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 */
 //==============================================================================
 
-#ifndef Linkdt-Tech_APP_TX_PATHS_TUNING_H_INCLUDED
-#define Linkdt-Tech_APP_TX_PATHS_TUNING_H_INCLUDED
+#ifndef LINKDT_TECH_APP_TX_PATHS_TUNING_H_INCLUDED
+#define LINKDT_TECH_APP_TX_PATHS_TUNING_H_INCLUDED
 
 namespace ripple {
 	//an address can create at most 100 tables
