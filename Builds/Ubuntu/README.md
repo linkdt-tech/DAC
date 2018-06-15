@@ -6,7 +6,7 @@
 - sudo apt-get install git
 
 ## 下载源码
-- git clone git@github.com:Dac/dacd.git dacd
+- git clone https://github.com/linkdt-tech/DAC.git dacd
 
 ## 安装开发环境依赖
 - 进入编译目录
