@@ -15,13 +15,14 @@
 ```
 - 分别执行下面指令
 ```
+> sudo chmod a+x *.sh
 > sudo ./install_rippled_depends_ubuntu.sh
 > ./install_boost.sh
 ```
 - 在 ~/.bashrc 文件中保存 BOOST_ROOT 环境变量
 
 ```
-export BOOST_ROOT=/home/dbliu/work/dac/Builds/Ubuntu/boost_1_63_0
+export BOOST_ROOT=~/dacd/Builds/Ubuntu/boost_1_63_0
 ```
 - 让 BOOST_ROOT 环境变量生效
 ```
@@ -31,7 +32,7 @@ export BOOST_ROOT=/home/dbliu/work/dac/Builds/Ubuntu/boost_1_63_0
 ## 编译 dacd
 - 重新进入源码根目录
 ```
-> cd ~/work/dacd
+> cd ~/dacd
 ```
 - 执行编译指令
 ```
