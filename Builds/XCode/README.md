@@ -125,17 +125,17 @@ Extract it to a folder, making note of where, open a terminal, then:
 Create an environment variable `BOOST_ROOT` in one of your `rc` files, pointing
 to the root of the extracted directory.
 
-### Clone the rippled repository
+### Clone the dacd repository
 
 From the terminal
 
 ```
-git clone git@github.com:ripple/rippled.git
-cd rippled
+git clone https://github.com/linkdt-tech/DAC.git dacd
+cd dacd
 ```
 
 Choose the master branch or one of the tagged releases listed on
-[GitHub](https://github.com/ripple/rippled/releases GitHub).
+[GitHub](https://github.com/linkdt-tech/dacd/releases GitHub).
 
 ```
 git checkout master
