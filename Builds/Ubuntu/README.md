@@ -11,7 +11,7 @@
 ## 安装开发环境依赖
 - 进入编译目录
 ```
-> cd Builds/Ubuntu
+> cd ./dacd/Builds/Ubuntu
 ```
 - 分别执行下面指令
 ```
