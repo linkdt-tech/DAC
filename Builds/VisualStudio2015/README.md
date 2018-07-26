@@ -43,20 +43,20 @@
 
 ## 编译 dacd
 ### 下载源码
-- git clone git@github.com:linkdt-tech/DAC.git dac
+- git clone https://github.com/linkdt-tech/DAC.git E:/dacd
 
 ### 生成 dacd 解决方案
 > 1. 打开 Developer Command Prompt for VS2015
 > 2. 切换 Command Prompt 的工作目录
 ```
-> cd E:/work/dac/Builds/VisualStudio2015
+> cd ./dacd/Builds/VisualStudio2015
 ```
 
 > 3. 执行 cmake，target 可以为 msvc.debug.unity/msvc.debug.nounity/msvc.release.unity/msvc.release.nonity/msvc.debug/msvc.release
 
 ```
-# E:/work/dacd 为源码根目录
-> cmake -G"Visual Studio 14 2015 Win64"  -Dtarget=msvc.debug.unity E:/work/dac
+# dacd 为源码根目录
+> cmake -G"Visual Studio 14 2015 Win64"  -Dtarget=msvc.debug.unity E:/dacd
 ```
 
 ### 编译 dacd
@@ -68,7 +68,7 @@
 ## 调试 dacd
 > 1. 创建一个工作目录用于存储配置文件 dacd.cfg，如
 ```
-E:/work/dacd/build/dacd.cfg
+E:/dacd/build/dacd.cfg
 ```
 > 2. 使用 --conf 参数指定 dacd 的配置文件，如
 
@@ -80,4 +80,4 @@ E:/work/dacd/build/dacd.cfg
 
 ## 运行测试用例
 > 1. 需要编译 dacd_classic 工程
-> 2. dacd.exe --unittest="Transaction2Sql" --unittest-arg="conf=E:\work\dacd\build\dacd.cfg"
+> 2. dacd.exe --unittest="Transaction2Sql" --unittest-arg="conf=E:\dacd\build\dacd.cfg"
