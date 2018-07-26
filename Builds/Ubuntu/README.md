@@ -16,7 +16,7 @@
 - 分别执行下面指令
 ```
 > sudo chmod a+x *.sh
-> sudo ./install_rippled_depends_ubuntu.sh
+> sudo ./install_dacd_depends_ubuntu.sh
 > ./install_boost.sh
 ```
 - 在 ~/.bashrc 文件中保存 BOOST_ROOT 环境变量
