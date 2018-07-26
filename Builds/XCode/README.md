@@ -152,12 +152,12 @@ git checkout release
 If you didn't persistently set the `BOOST_ROOT` environment variable to the
 root of the extracted directory above, then you should set it temporarily.
 
-For example, assuming your username were `Abigail` and you extracted Boost
-1.61.0 in `/Users/Abigail/Downloads/boost_1_61_0`, you would do for any
+For example, assuming your username were `Test` and you extracted Boost
+1.61.0 in `/Users/Test/Downloads/boost_1_61_0`, you would do for any
 shell in which you want to build:
 
 ```
-export BOOST_ROOT=/Users/Abigail/Downloads/boost_1_61_0
+export BOOST_ROOT=/Users/Test/Downloads/boost_1_61_0
 ```
 
 ## Build
