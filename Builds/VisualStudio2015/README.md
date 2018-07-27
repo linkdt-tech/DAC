@@ -27,7 +27,7 @@
 > 1. 下载 [Win64 OpenSSL](http://slproweb.com/products/Win32OpenSSL.html)
 > 2. 安装完 Open SSL 后，并将 OPENSSL_ROOT_DIR 环境变量设置为 OpenSSL 安装路径
 
-### install boost
+### install boost 1.63.0
 > 1. 下载 [boost](http://www.boost.org/users/news/)
 > 2. 编译 boost
 ```cmd
@@ -35,10 +35,10 @@
 > bootstrap
 > bjam --toolset=msvc-14.0 address-model=64 architecture=x86 link=static threading=multi runtime-link=shared,static stage --stagedir=stage64
 ```
-> 3. 将 BOOST_ROOT 环境变量设置为 C:\lib\boost_1_62_0
+> 3. 将 BOOST_ROOT 环境变量设置为 C:\lib\boost_1_63_0
 
 ### install mysql
-> 1. 下载 [libmysqlclient for windwos](https://dev.mysql.com/downloads/connector/c/)。建议优先选择 x86，64-bit 的压缩包。
+> 1. 下载 [libmysqlclient for windows](https://dev.mysql.com/downloads/connector/c/)。建议优先选择 x86，64-bit 的压缩包。
 > 2. 将 MYSQL_ROOT_DIR 环境变量设置为 libmysqlclient 的安装目录
 
 ## 编译 dacd
@@ -72,11 +72,11 @@ E:/dacd/build/dacd.cfg
 ```
 > 2. 使用 --conf 参数指定 dacd 的配置文件，如
 
-![Visual Studio 2013 Command Args Prop Page](images/VSCommandArgsPropPage.png)
+![Visual Studio 2015 Command Args Prop Page](images/VSCommandArgsPropPage.png)
 
 > 3. dacd 在使用 Windows Debug Heap 调试程序的时候会导致运行非常慢。我们可以设置 _NO_DEBUG_HEAP 环境变量禁用 Debug Heap，如
 
-![Visual Studio 2013 No Debug Heap Prop Page](images/NoDebugHeapPropPage.png)
+![Visual Studio 2015 No Debug Heap Prop Page](images/NoDebugHeapPropPage.png)
 
 ## 运行测试用例
 > 1. 需要编译 dacd_classic 工程
