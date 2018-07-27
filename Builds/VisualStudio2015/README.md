@@ -56,14 +56,14 @@
 
 ```
 # dacd 为源码根目录
-> cmake -G"Visual Studio 14 2015 Win64"  -Dtarget=msvc.debug.unity E:/dacd
+> cmake -G"Visual Studio 14 2015 Win64"  -Dtarget=msvc.release.unity E:/dacd
 ```
 
 ### 编译 dacd
 > 1. 进入 Builds/VisualStudio2015 目录
 > 2. 打开 dacd.sln
 > 3. 如果要运行测试用例，编译 dacd-classic 工程；否则编译 dacd 工程
-> 4. 编译成功后 dacd 实例编译至 build/msvc.debug.unity/Debug 目录下，运行 dacd 实例前需要将 MYSQL_ROOT_DIR/lib 下的 libmysql.dll 拷贝至此 Debug 目录下
+> 4. 编译成功后 dacd 实例编译至 build/msvc.release.unity/Debug 目录下，运行 dacd 实例前需要将 MYSQL_ROOT_DIR/lib 下的 libmysql.dll 拷贝至此 Debug 目录下
 
 ## 调试 dacd
 > 1. 创建一个工作目录用于存储配置文件 dacd.cfg，如
