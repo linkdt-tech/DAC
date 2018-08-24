@@ -23,7 +23,7 @@ sudo ./dacd --conf="/opt/dac/etc/dacd.cfg"  validation_create
 6)	分别在4个节点进行同样的操作，得到各自的validation_public_key及validation_seed
 
 ### 2.	配置文件的修改
-所有节点的dacd.cfg都要进行下面的修改：
+所有需要参与共识的节点的dacd.cfg都要进行下面1,2,3,4的修改（普通节点可不用修改）：
 1)	字段[ips]，添加其它三个节点的ip及端口号5123，如下例所示：
 ```
 [ips]
@@ -49,6 +49,21 @@ n9KdidFafxRB4izPH1tdLFpBjVboQQy7MXjC8SvLvD1wsahmGc2E
 n9KdidFafxRB4izPH1tdLFpBjVboQQy7MXjC8SvLvD1wsahmGc2E
 n9LrzPopoh3CUiJx7AFRaCFoy4t3RafAhyoYEeYWhkMb5R7Z19oL
 ```
+
+区块数据路径的修改
+5) 字段 [node_db]， 修改区块数据路径， 如下例所示
+[node_db]
+type=RocksDB
+path=/data/test/dacd/rocksdb
+open_files=2000
+filter_bits=12
+cache_mb=256
+file_size_mb=8
+file_size_mult=2
+
+6) 字段 [database_path]， 修改区块数据路径， 如下例所示
+[database_path]
+/data/test/dacd/db
 
 
 ## 3.	架设网络 　　
