@@ -52,6 +52,7 @@ n9LrzPopoh3CUiJx7AFRaCFoy4t3RafAhyoYEeYWhkMb5R7Z19oL
 
 区块数据路径的修改
 5) 字段 [node_db]， 修改区块数据路径， 如下例所示
+```
 [node_db]
 type=RocksDB
 path=/data/test/dacd/rocksdb
@@ -60,11 +61,13 @@ filter_bits=12
 cache_mb=256
 file_size_mb=8
 file_size_mult=2
+```
 
 6) 字段 [database_path]， 修改区块数据路径， 如下例所示
+```
 [database_path]
 /data/test/dacd/db
-
+```
 
 ## 3.	架设网络 　　
 1)	启动dacd程序
