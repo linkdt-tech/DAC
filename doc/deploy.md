@@ -50,7 +50,7 @@ n9KdidFafxRB4izPH1tdLFpBjVboQQy7MXjC8SvLvD1wsahmGc2E
 n9LrzPopoh3CUiJx7AFRaCFoy4t3RafAhyoYEeYWhkMb5R7Z19oL
 ```
 
-区块数据路径的修改
+区块数据路径的修改：
 5) 字段 [node_db]， 修改区块数据路径， 如下例所示
 ```
 [node_db]
