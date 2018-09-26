@@ -18,7 +18,6 @@ sudo ./dacd --conf="/opt/dacd/dacd.cfg" &
 sudo watch ./dacd  -q  --conf="/opt/dacd/dacd.cfg" server_info
 
 若输出结果中，字段"complete_ledgers" :类似 "1-10"，则dacd服务启动成功
-每个网络节点的dacd服务都要求成功运行
 ```
 
 ### 2.	生成网关
