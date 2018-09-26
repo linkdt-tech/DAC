@@ -1,7 +1,10 @@
 ## 区块链网络搭建（普通节点可直接进入第3步）
 需要至少 4 个共识节点，每个验证节点需要生成public key和seed。
 ### 1.	 验证节点的安装
-1)	将安装包程序放在目录/opt/下
+1) 进入/opt/目录下，下载安装包到此目下
+```
+sudo wget https://github.com/linkdt-tech/DAC/releases/download/v0.10.1/dacd-0.10.1-x86_64-linux.tar.gz
+```
 2) 解压安装包
 ```
 sudo tar -xvzf dacd-0.10.1-x86_64-linux.tar.gz
@@ -75,15 +78,23 @@ file_size_mult=2
 /data/test/dacd/db
 ```
 
-## 3.	架设网络 　　
-1)	启动dacd程序
+## 3.	架设网络
+1) 进入/opt/目录下，下载安装包到此目下（若已完成， 可跳过此步骤）
+```
+sudo wget https://github.com/linkdt-tech/DAC/releases/download/v0.10.1/dacd-0.10.1-x86_64-linux.tar.gz
+```
+2) 解压安装包（若已完成， 可跳过此步骤）
+```
+sudo tar -xvzf dacd-0.10.1-x86_64-linux.tar.gz
+```
+3)	启动dacd程序<br>
 进入dacd应用程序目录：/opt/dacd，执行下面的命令
 ```
 sudo nohup ./dacd  -q  --conf="/opt/dacd/dacd.cfg"&
 ```
 每个网络节点均要执行上述命令，使dacd服务在后台运行。<br>
 
-2)	检查是否成功，进入dacd应用程序目录：/opt/dacd，执行下面的命令
+4)	检查是否成功，进入dacd应用程序目录：/opt/dacd，执行下面的命令
 ```
 sudo watch ./dacd  -q  --conf="/opt/dacd/dacd.cfg" server_info
 ```
