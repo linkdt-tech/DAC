@@ -1,17 +1,24 @@
-## 区块链网络搭建
+## 区块链网络搭建（普通节点可直接进入第3步）
 需要至少 4 个验证节点，每个验证节点需要生成public key和seed。
-### 1.	验证节点的生成
-1)	将可执行程序放在目录/opt/dac/bin，将配置文件放在目录/opt/dac/etc
-2)	进入/opt/dac/bin目录，输入:
+### 1.	 验证节点的安装
+1)	将安装包程序放在目录/opt/下
+2) 解压安装包
 ```
-sudo ./dacd --conf="/opt/dac/etc/dacd.cfg"
+sudo tar -xvzf dacd-0.10.1-x86_64-linux.tar.gz
 ```
-3)	确认dacd程序已经启动，输入ps –ef | grep dacd，看是否列出dacd进程
-4)	生成validation_public_key及validation_seed, 输入:<br>
+2)	进入/opt/dacd/目录，输入:
+```
+sudo ./dacd --conf="/opt/dacd/dacd.cfg"
+```
+3) 确认dacd程序已经启动，输入:
+```
+ps –ef | grep dacd
+```
+4)	生成validation_public_key及validation_seed, 输入:
 ```
 sudo ./dacd --conf="/opt/dac/etc/dacd.cfg"  validation_create
 ```
-5)	返回结果如下：
+返回结果如下：
 ```
 {
    "status" : "success",
@@ -20,7 +27,7 @@ sudo ./dacd --conf="/opt/dac/etc/dacd.cfg"  validation_create
    "validation_seed" : "xxjX5VuTjQKvkTSw6EUyZnahbpgS1"
 }
 ```
-6)	分别在4个节点进行同样的操作，得到各自的validation_public_key及validation_seed
+5)	分别在4个节点进行同样的操作，得到各自的validation_public_key及validation_seed
 
 ### 2.	配置文件的修改
 所有需要参与共识的节点的dacd.cfg都要进行下面1,2,3,4的修改（普通节点可不用修改）：
@@ -70,15 +77,15 @@ file_size_mult=2
 
 ## 3.	架设网络 　　
 1)	启动dacd程序
-进入dacd应用程序目录：/opt/dac/bin，执行下面的命令
+进入dacd应用程序目录：/opt/dacd，执行下面的命令
 ```
-sudo nohup ./dacd  -q  --conf="/opt/dac/etc/dacd.cfg"&
+sudo nohup ./dacd  -q  --conf="/opt/dacd/dacd.cfg"&
 ```
-每个网络节点均要执行上述命令，使dac服务在后台运行。
-2)	检查是否成功<br>
-进入dac应用程序目录：/opt/dac/bin，执行下面的命令
+每个网络节点均要执行上述命令，使dacd服务在后台运行。
+2)	检查是否成功
+进入dacd应用程序目录：/opt/dacd，执行下面的命令
 ```
-sudo watch ./dacd  -q  --conf="/opt/dac/etc/dacd.cfg" server_info
+sudo watch ./dacd  -q  --conf="/opt/dacd/dacd.cfg" server_info
 ```
-若输出结果中，字段"complete_ledgers" :类似 "1-10"，则dacd服务启动成功<br>
-每个网络节点的dac服务都要求成功运行
+若输出结果中，字段"complete_ledgers" :类似 "1-10"，则dacd服务启动成功
+每个网络节点的dacd服务都要求成功运行
