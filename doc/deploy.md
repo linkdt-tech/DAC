@@ -1,7 +1,7 @@
 ## 区块链网络搭建（普通节点可直接进入第3步）
 需要至少 4 个共识节点，每个验证节点需要生成public key和seed。
 ### 1.	 验证节点的安装
-1) 进入/opt/目录下，下载安装包到此目下
+1) 进入/opt/目录下，下载安装包到此目录下
 ```
 sudo wget https://github.com/linkdt-tech/DAC/releases/download/v0.10.1/dacd-0.10.1-x86_64-linux.tar.gz
 ```
