@@ -18,8 +18,8 @@ ps –ef | grep dacd
 ```
 sudo ./dacd --conf="/opt/dac/etc/dacd.cfg"  validation_create
 ```
-返回结果如下：
 ```
+返回结果如下：
 {
    "status" : "success",
    "validation_key" : "TUCK NUDE CORD BERN LARD COCK ENDS ETC GLUM GALE CASK KEG",
