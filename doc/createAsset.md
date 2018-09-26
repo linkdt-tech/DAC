@@ -84,16 +84,16 @@ sudo ./dacd wallet_propose
 ```
 sudo ./dacd submit xxSuJswbuouEGCACMm7u9BArCK3ha '{"Account":"z4ztM8wKEJyGcVJd759PBK6cntagrrESSQ","LimitAmount":{"currency":"USD","issuer":"zBtDg4u4bBb16RoUkBnLfemWegtbuy8ioD","value":"500000000"},"TransactionType":"TrustSet"}'
 ```
-备注：
-xxSuJswbuouEGCACMm7u9BArCK3ha 为资产账号私钥
-zBtDg4u4bBb16RoUkBnLfemWegtbuy8ioD 为网关地址
-500000000 为信任的数量， 信任多少则可发行多少
+备注：<br>
+xxSuJswbuouEGCACMm7u9BArCK3ha 为资产账号私钥<br>
+zBtDg4u4bBb16RoUkBnLfemWegtbuy8ioD 为网关地址<br>
+500000000 为信任的数量， 信任多少则可发行多少<br>
 
 3) 发行数字资产到刚生成的地址上（即使用网关向地址转数字资产）， 输入：
 ```
 sudo ./dacd submit xnmGtEajykEqVsMpq7dmbFeyqWhzu '{"Account":"zBtDg4u4bBb16RoUkBnLfemWegtbuy8ioD","Amount":{"currency":"USD","issuer":"zBtDg4u4bBb16RoUkBnLfemWegtbuy8ioD","value":"500000000"},"Destination":"zE1sCr7VZFknyjQFWvvH1A3BYfY9yr59Gk","TransactionType":"Payment"}'
 ```
-备注：
+备注：<br>
 xnmGtEajykEqVsMpq7dmbFeyqWhzu 为网关私钥<br>
 zBtDg4u4bBb16RoUkBnLfemWegtbuy8ioD 为网关地址， 其中Account和Issuer的值都为网关地址<br>
 USD 为发行的数字资产名称， 可自定义<br>
@@ -106,7 +106,7 @@ zE1sCr7VZFknyjQFWvvH1A3BYfY9yr59Gk 为接收的数字资产账号地址<br>
 ```
 sudo ./dacd submit xxSuJswbuouEGCACMm7u9BArCK3ha '{"Account":"zE1sCr7VZFknyjQFWvvH1A3BYfY9yr59Gk","Amount":{"currency":"USD","issuer":"zBtDg4u4bBb16RoUkBnLfemWegtbuy8ioD","value":"500000000"},"Destination":"钱包地址","TransactionType":"Payment"}'
 ```
-备注：
+备注：<br>
 xxSuJswbuouEGCACMm7u9BArCK3ha为数字资产账号私钥<br>
 zBtDg4u4bBb16RoUkBnLfemWegtbuy8ioD为网关地址<br>
 <br>
