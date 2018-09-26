@@ -90,6 +90,7 @@ sudo ./dacd submit xxSuJswbuouEGCACMm7u9BArCK3ha '{"Account":"z4ztM8wKEJyGcVJd75
 备注：
 xxSuJswbuouEGCACMm7u9BArCK3ha 为资产账号私钥
 zBtDg4u4bBb16RoUkBnLfemWegtbuy8ioD 为网关地址
+USD 为发行的数字资产名称， 可自定义
 500000000 为信任的数量， 信任多少则可发行多少
 ```
 
@@ -100,8 +101,8 @@ sudo ./dacd submit xnmGtEajykEqVsMpq7dmbFeyqWhzu '{"Account":"zBtDg4u4bBb16RoUkB
 备注：
 xnmGtEajykEqVsMpq7dmbFeyqWhzu 为网关私钥
 zBtDg4u4bBb16RoUkBnLfemWegtbuy8ioD 为网关地址， 其中Account和Issuer的值都为网关地址
-USD 为发行的数字资产名称， 可自定义
-50000000 为发行总量， 可自定义
+USD 为发行的数字资产名称
+50000000 为发行总量， 值不能超过上面信任的数量
 zE1sCr7VZFknyjQFWvvH1A3BYfY9yr59Gk 为接收的数字资产账号地址
 
 自此， 资产就发行到生成的数字资产账号上， 请妥善保管地址和私钥
