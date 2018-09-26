@@ -49,6 +49,7 @@ sudo ./dacd wallet_propose
 3)	申明地址为网关（即打开网关标志），输入：
 ```
 sudo ./dacd submit xnmGtEajykEqVsMpq7dmbFeyqWhzu '{"Account":"zBtDg4u4bBb16RoUkBnLfemWegtbuy8ioD","Flags":0,"SetFlag":8,"TransactionType":"AccountSet"}'
+
 至此，网关生成成功， 请妥善保存网关地址和私钥
 ```
 
