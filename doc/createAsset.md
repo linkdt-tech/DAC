@@ -13,9 +13,12 @@ sudo tar -xvzf dacd-0.10.1-x86_64-linux.tar.gz
 ```
 sudo ./dacd --conf="/opt/dacd/dacd.cfg" &
 ```
-3) 确认dacd程序已经启动，输入:
+4)	检查是否成功，进入dacd应用程序目录：/opt/dacd，执行下面的命令
 ```
-ps –ef | grep dacd
+sudo watch ./dacd  -q  --conf="/opt/dacd/dacd.cfg" server_info
+
+若输出结果中，字段"complete_ledgers" :类似 "1-10"，则dacd服务启动成功
+每个网络节点的dacd服务都要求成功运行
 ```
 
 ### 2.	生成网关
