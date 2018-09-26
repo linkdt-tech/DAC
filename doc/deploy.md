@@ -81,7 +81,7 @@ file_size_mult=2
 ```
 sudo nohup ./dacd  -q  --conf="/opt/dacd/dacd.cfg"&
 ```
-每个网络节点均要执行上述命令，使dacd服务在后台运行。
+每个网络节点均要执行上述命令，使dacd服务在后台运行。<br>
 2)	检查是否成功，进入dacd应用程序目录：/opt/dacd，执行下面的命令
 ```
 sudo watch ./dacd  -q  --conf="/opt/dacd/dacd.cfg" server_info
