@@ -19,7 +19,7 @@ ps –ef | grep dacd
 ```
 4)	生成validation_public_key及validation_seed, 输入:
 ```
-sudo ./dacd --conf="/opt/dac/etc/dacd.cfg"  validation_create
+sudo ./dacd --conf="/opt/dacd/dacd.cfg"  validation_create
 ```
 ```
 返回结果如下：
@@ -64,7 +64,7 @@ n9LrzPopoh3CUiJx7AFRaCFoy4t3RafAhyoYEeYWhkMb5R7Z19oL
 ```
 [node_db]
 type=RocksDB
-path=/data/test/dacd/rocksdb
+path=/data/product/dacd/rocksdb
 open_files=2000
 filter_bits=12
 cache_mb=256
@@ -75,7 +75,7 @@ file_size_mult=2
 6) 字段 [database_path]， 修改区块数据路径， 如下例所示
 ```
 [database_path]
-/data/test/dacd/db
+/data/product/dacd/db
 ```
 
 ## 3.	架设网络
