@@ -85,7 +85,7 @@ sudo ./dacd wallet_propose
 
 3) 数字资产信任网关（信任网关才可进行资产转账）， 输入
 ```
-sudo ./dacd submit xxSuJswbuouEGCACMm7u9BArCK3ha '{"Account":"z4ztM8wKEJyGcVJd759PBK6cntagrrESSQ","LimitAmount":{"currency":"USD","issuer":"zBtDg4u4bBb16RoUkBnLfemWegtbuy8ioD","value":"500000000"},"TransactionType":"TrustSet"}'
+sudo ./dacd submit xxSuJswbuouEGCACMm7u9BArCK3ha '{"Account":"zE1sCr7VZFknyjQFWvvH1A3BYfY9yr59Gk","LimitAmount":{"currency":"USD","issuer":"zBtDg4u4bBb16RoUkBnLfemWegtbuy8ioD","value":"500000000"},"TransactionType":"TrustSet"}'
 
 备注：
 xxSuJswbuouEGCACMm7u9BArCK3ha 为资产账号私钥
